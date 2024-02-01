@@ -87,7 +87,7 @@ textarea {
     padding-top: 6px;
     background-color: transparent !important;
     border: 2px solid #fff !important;
-    color: #fff;
+    color: #fff !important;
 
 }
 
