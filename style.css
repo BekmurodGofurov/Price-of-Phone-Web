@@ -1,0 +1,153 @@
+body {
+    position: relative;
+    scrollbar-color: dark;
+    background: url("img.jpg") no-repeat fixed center;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 1px;
+    background: #5e3220fd;
+}
+
+/* Style the scrollbar handle */
+::-webkit-scrollbar-thumb {
+    background: #5e3220fd;
+}
+
+
+table {
+    padding: 5px;
+    border: none !important;
+
+}
+
+tr {
+    color: #fff;
+    border-bottom: #fff;
+
+}
+
+th {
+    border-bottom: #fff;
+
+}
+
+td button {
+    border: none;
+}
+
+td button i {
+    color: #fff;
+}
+
+.none-border {
+    border: none;
+}
+
+input {
+    background-color: transparent !important;
+    border: 2px solid #fff !important;
+    color: #fff !important;
+}
+
+::placeholder {
+    color: #fff !important;
+}
+
+select {
+    background-color: transparent !important;
+    border: 2px solid #fff !important;
+    color: #fff !important;
+}
+
+select option {
+    color: black !important;
+}
+
+
+
+button a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+button:hover a {
+    color: #fff;
+    text-decoration: none;
+}
+
+textarea {
+    height: 90px;
+    padding-left: 12px;
+    padding-top: 6px;
+    background-color: transparent !important;
+    border: 2px solid #fff !important;
+    color: #fff;
+
+}
+
+.add {
+    background-color: transparent;
+    padding: 5px 10px;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.add a {
+    color: #fff;
+}
+
+.add:hover a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 26px
+}
+
+.p1 {
+    text-align: end;
+    width: 55%;
+    box-sizing: border-box;
+    clear: both;
+}
+
+.link {
+    text-align: end;
+    box-sizing: border-box;
+    clear: both;
+    margin-bottom: 0;
+}
+
+#foodter a i {
+    color: #fff;
+    padding: 5px 10px;
+}
+
+#foodter p {
+    font-size: 20px;
+    margin-bottom: 0;
+
+}
+
+#foodter {
+    backdrop-filter: blur(15px);
+    /* blur effect to the backdrop */
+    background-color: rgba(120, 115, 115, 0.2);
+}
+
+.hira {
+    backdrop-filter: blur(8px);
+    /* blur effect to the backdrop */
+    background-color: rgba(120, 115, 115, 0.2);
+}
+strong{
+    margin-right: 13%;
+}
+
+#foodter a i:hover {
+    font-size: 28px;
+}

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8" />
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://kit.fontawesome.com/43f3c7d252.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Table | page</title>
+  <link rel="icon" href="favicon (1).ico" type="image/x-icon">
+</head>
+
+<body>
+  <div id="main">
+    
+    <div class="container my-4 hira">
+      <div class="for-img">
+        <form action="">
+          <div class="alert alert-danger text-center" v-if="error">{{errorHandler}}</div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th cope="col">№</th>
+                <th cope="col">Do'konlar</th>
+                <th cope="col">Madeli</th>
+                <th cope="col">Rangi</th>
+                <th cope="col">Xotira</th>
+                <th cope="col">Boshiga</th>
+                <th cope="col">Oylar</th>
+                <th cope="col">Oyiga</th>
+                <th cope="col">Jami sum</th>
+                <th cope="col">Asl narx</th>
+                <th cope="col">Farqi</th>
+                <th cope="col">Foiz</th>
+                <th cope="col">Qo'shimcha</th>
+                <th cope="col">Edit</th>
+                <th cope="col">Delete</th>
+              </tr>
+            </thead>
+  
+            <tbody v-for="user in users">
+              <tr class="my-3">
+                <td rowspan="4" class="py-5">{{user.id}}</td>
+                <td rowspan="4" class="py-5">{{user.dokanNnomi}}</td>
+                <td rowspan="4" class="py-5">{{user.nomi}}</td>
+                <td rowspan="4" class="py-5">{{user.rangi}}</td>
+                <td rowspan="4" class="py-5">{{user.xotira}}</td>
+                <td rowspan="4" class="py-5">{{user.boshlangichTolov}}</td>
+              </tr>
+  
+              <tr>
+                <td>{{user.oy1}}</td>
+                <td>{{user.oy1Tolov}}</td>
+                <td>{{user.oy1Jami}}</td>
+                <td>{{user.asl}}</td>
+                <td>{{user.oy1Farq}}</td>
+                <td>{{user.oy1Foiz}}</td>
+                <td rowspan="3">{{user.malumot}}</td>
+                <td rowspan="4" class="py-5"><button type="button" class="btn btn-primary" @click="editData(user.id)"><i class="fa-solid fa-pen-to-square" style='font-size:26px'></i></button></td>
+                <td rowspan="3" class="py-5"><button type="button" class="btn btn-danger" v-on:click="deleteData(user.id)"><i class="fa-solid fa-trash" style='font-size:26px'></i></button></td>
+              </tr>
+              <tr>
+                <td>{{user.oy2}}</td>
+                <td>{{user.oy2Tolov}}</td>
+                <td>{{user.oy2Jami}}</td>
+                <td>{{user.asl}}</td>
+                <td>{{user.oy2Farq}}</td>
+                <td>{{user.oy2Foiz}}</td>
+  
+              </tr>
+              <tr>
+                <td>{{user.oy3}}</td>
+                <td>{{user.oy3Tolov}}</td>
+                <td>{{user.oy3Jami}}</td>
+                <td>{{user.asl}}</td>
+                <td>{{user.oy3Farq}}</td>
+                <td>{{user.oy3Foiz}}</td>
+              </tr>
+  
+              <tr>
+  
+              </tr>
+  
+            </tbody>
+          </table>
+          <br /><br />
+        </form>
+      </div>
+
+      
+
+    </div>
+
+    <div class="container hira my-4">
+      <h1 class="text-center">{{title}}</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <form class="mt-3">
+            <div class="mb-3">
+              <!-- <label for="dokanNnomi" class="form-label">Dokon nomi</label> -->
+              <input type="text" class="form-control" id="dokanNnomi" aria-describedby="emailHelp" v-model="dokanNnomi"
+                placeholder="Dokon nomi kiriting" maxlength="15" />
+            </div>
+            <div class="mb-3">
+              <select class="form-control mb-3" id="nomi" v-model="nomi" aria-label=".form-select-lg example">
+                <option disabled value="">Telefon madelini tanlang</option>
+                <option>15 Pro Max</option>
+                <option>15 Pro</option>
+                <option>15 Plus</option>
+                <option>15</option>
+                <option>14 Pro Max</option>
+                <option>14 Pro</option>
+                <option>14 Plus</option>
+                <option>14</option>
+                <option>13 Pro Max</option>
+                <option>13 Pro</option>
+                <option>13 Mini</option>
+                <option>13</option>
+                <option>12 Pro Max</option>
+                <option>12 Pro</option>
+                <option>12 Mini</option>
+                <option>12</option>
+                <option>11 Pro Max</option>
+                <option>11 Pro</option>
+                <option>11</option>
+              </select>
+
+            </div>
+            <div class="mb-3">
+              <select class="form-control mb-3" aria-label=".form-select-lg example" id="rangi" v-model="rangi">
+                <option disabled value="">Ranglardan birini tanlang</option>
+                <option>Silver</option>
+                <option>Black</option>
+                <option>Gold</option>
+                <option>Green</option>
+                <option>Blue</option>
+                <option>Red</option>
+                <option>Yellow</option>
+                <option>Pink</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <select class="form-control mb-3" aria-label=".form-select-lg example" id="xotira" v-model="xotira">
+                <option disabled value="">Xotira hajmini nalang</option>
+                <option>64 GB</option>
+                <option>128 GB</option>
+                <option>256 GB</option>
+                <option>512 GB</option>
+                <option>1 TB</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <!-- <label for="boshlangichTolov" class="form-label">Boshlangich to'lov summa</label> -->
+              <input type="number" class="form-control" id="boshlangichTolov" v-model="boshlangichTolov"
+                onKeyPress="if(this.value.length==3)return false;" placeholder="Boshlangich to'lov"/>
+            </div>
+            <div class="mb-3">
+              
+              <select class="form-control mb-3" aria-label=".form-select-lg example" id="oy1" v-model="oy1">
+                <option disabled value="">Birinchi oy turini tanlang</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <!-- <label for="oy1Tolov" class="form-label">Oyiga to'lanadigan summa</label> -->
+              <input type="number" class="form-control" id="oy1Tolov" v-model="oy1Tolov"
+                onKeyPress="if(this.value.length==4)return false;" placeholder="Oyiga to'lanadigan summa"/>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <form class="mt-3">
+            <div class="mb-3">
+              <select class="form-control mb-3" aria-label=".form-select-lg example" id="oy2" v-model="oy2">
+                <option disabled value="">Ikkinchi oy turini tanlang</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+
+              </select>
+            </div>
+            <div class="mb-3">
+              <!-- <label for="oy2Tolov" class="form-label">Oyiga to'lanadigan summa</label> -->
+              <input type="number" class="form-control" id="oy2Tolov" v-model="oy2Tolov"
+                onKeyPress="if(this.value.length==4)return false;" placeholder="Oyiga to'lanadigan summa"/>
+            </div>
+            <div class="mb-3">
+              <select class="form-control mb-3" aria-label=".form-select-lg example" id="oy3" v-model="oy3">
+                <option disabled value="">Uchinchi oy turini tanlang</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <!-- <label for="oy3Tolov" class="form-label">Oyiga to'lanadigan summa</label> -->
+              <input type="number" class="form-control" id="oy3Tolov" v-model="oy3Tolov"
+                onKeyPress="if(this.value.length==4)return false;" placeholder="Oyiga to'lanadigan summa"/>
+            </div>
+
+            <div class="mb-3">
+              <!-- <label for="asl" class="form-label">Asil narxi</label> -->
+              <input type="text" class="form-control" id="asl" v-model="asl"
+                onKeyPress="if(this.value.length==4)return false;" placeholder="Asl narxini kiriting"/>
+            </div>
+
+            <div class="mb-3">
+              <!-- <label for="malumot" class="form-label">Qo'shimcha malumot</label> -->
+              <textarea class="form-control" name="malumot" id="malumot"  rows="2" v-model="malumot" maxlength="20" placeholder="Qo'shimcha ma'lumot uchun"></textarea>
+            </div>
+          </form>
+        </div>
+      </div>
+      <button type="button" class="w-100 add" v-on:click="addUser()"><a href="#" class="w-100">ADD DATA</a></button>
+    </div>
+    <div id="foodter">
+        <div class="container py-3">
+          <p class="text-center"></p>
+          <p class="link"><strong>CopyRight &copy2024</strong>Connecting Us:
+          <a href="https://t.me/BekmurodOfficial" target="_blank"><i class="fa-brands fa-telegram"></i></a> 
+          <a href="https://www.instagram.com/2006_bekmurod?igsh=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/people/Bekmurod-Gofurov/pfbid02Ejs2uyAVLgZHwDU395X8ZrFSk4wUbR5D6NtcgZdMphwEKmHDRHJDHwF5J2Mdh6pAl/?ref=xav_ig_profile_web" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://twitter.com/BekmurodGofurov" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="tel:998943895677" target="_blank"><i class="fa-solid fa-phone"></i></a>
+          </p>
+        </div>      
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+
+</html>
